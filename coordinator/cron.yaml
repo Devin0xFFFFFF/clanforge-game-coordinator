@@ -1,0 +1,13 @@
+cron:
+- description: "Handle Server Allocations/Deallocations."
+  url: /manage
+  schedule: every 1 mins
+- description: "Purge stuck allocations"
+  url: /freeallocs
+  schedule: every 1 hours
+- description: "Handle stat aggregation and removal of User and Join records."
+  url: /stats
+  schedule: every 24 hours synchronized
+  retry_parameters:
+    min_backoff_seconds: 60
+    max_doublings: 5

@@ -1,0 +1,42 @@
+queue:
+- name: default
+  rate: 5/s
+  bucket_size: 10
+  max_concurrent_requests: 5
+  retry_parameters:
+    task_retry_limit: 6
+    task_age_limit: 5m
+    min_backoff_seconds: 5
+    max_backoff_seconds: 60
+    max_doublings: 4
+- name: coordinator-allocate
+  rate: 1/m
+  bucket_size: 10
+  max_concurrent_requests: 1
+  retry_parameters:
+    task_retry_limit: 6
+    task_age_limit: 5m
+    min_backoff_seconds: 10
+    max_backoff_seconds: 60
+    max_doublings: 4
+- name: coordinator-allocations
+  rate: 1/m
+  bucket_size: 10
+  max_concurrent_requests: 1
+  retry_parameters:
+    task_retry_limit: 6
+    task_age_limit: 5m
+    min_backoff_seconds: 10
+    max_backoff_seconds: 60
+    max_doublings: 4
+- name: coordinator-deallocate
+  rate: 1/m
+  bucket_size: 10
+  max_concurrent_requests: 1
+  retry_parameters:
+    task_retry_limit: 6
+    task_age_limit: 5m
+    min_backoff_seconds: 10
+    max_backoff_seconds: 60
+    max_doublings: 4
+

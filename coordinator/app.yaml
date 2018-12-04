@@ -1,0 +1,44 @@
+service: default
+runtime: go
+api_version: go1
+instance_class: F1
+automatic_scaling:
+  target_cpu_utilization: 0.6
+  target_throughput_utilization: 0.6
+  max_instances: 3
+  min_instances: 1
+  min_idle_instances: 1
+  max_idle_instances: automatic
+  min_pending_latency: 30ms
+  max_pending_latency: automatic
+  max_concurrent_requests: 10
+handlers:
+- url: /enqueue
+  script: _go_app
+- url: /dequeue
+  script: _go_app
+- url: /poll
+  script: _go_app
+- url: /heartbeat
+  script: _go_app
+- url: /joinmatch
+  login: admin
+  script: _go_app
+- url: /manage
+  login: admin
+  script: _go_app
+- url: /alloc
+  login: admin
+  script: _go_app
+- url: /allocation
+  login: admin
+  script: _go_app
+- url: /dealloc
+  login: admin
+  script: _go_app
+- url: /freeallocs
+  login: admin
+  script: _go_app
+- url: /stats
+  login: admin
+  script: _go_app
