@@ -16,13 +16,13 @@ const (
 )
 
 func getStringFromFile(path string) string {
-	authAccessFile, err := ioutil.ReadFile(clanforgeAPIAccessKeyPath)
+	file, err := ioutil.ReadFile(path)
 
 	if err != nil {
 		return ""
 	}
 
-	return string(authAccessFile)
+	return string(file)
 }
 
 func storeCSV(ctx context.Context, fileName string, data []byte) (err error) {

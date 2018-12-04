@@ -69,7 +69,7 @@ type allocationsResponseInfo struct {
 	Error     string `json:"error"`
 }
 
-var profileID = getStringFromFile(profileIDPath)
+var defaultProfileID = getStringFromFile(profileIDPath)
 var clanforgeAPIAccessKey = getStringFromFile(clanforgeAPIAccessKeyPath)
 var clanforgeAPISecretKey = getStringFromFile(clanforgeAPISecretKeyPath)
 var naRegionID = getStringFromFile(naRegionIDPath)

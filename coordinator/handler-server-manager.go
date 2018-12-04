@@ -252,7 +252,7 @@ func allocateServerHandler(w http.ResponseWriter, r *http.Request) {
 		allocResponse = allocateResponse{Success: true}
 		err = nil
 	} else { // Request server from Multiplay (ClanForge)
-		allocResponse, err = queryClanForgeAlloc(ctx, serverID, profileID, regionID)
+		allocResponse, err = queryClanForgeAlloc(ctx, serverID, defaultProfileID, regionID)
 	}
 
 	if err != nil {

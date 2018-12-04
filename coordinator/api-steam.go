@@ -71,7 +71,7 @@ func steamAuth(ctx context.Context, authToken string) (authenticated bool, steam
 		return
 	}
 
-	log.Infof(ctx, "[STEAM-AUTH] Sending Request...")
+	log.Infof(ctx, "[STEAM-AUTH] Sending Request (%v)...", appID)
 
 	resp, err := client.Do(req)
 
